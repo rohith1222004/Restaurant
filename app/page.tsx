@@ -73,136 +73,150 @@ export default function Home() {
           </div>
         </div>
         <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Featured Items</h1>
-        
-        
-        <div className="flex justify-evenly mb-48">
-
+      
+      <div className="flex justify-center items-center flex-col md:flex-row md:justify-evenly md:mb-8">
         {/* Carousel */}
-
-
         <Carousel
-        className="w-1/5"
-           plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
+          className="w-full md:w-2/5 lg:w-1/3" // Adjust width based on screen size
+          plugins={[Autoplay({ delay: 2000 })]}
         >
-        <CarouselContent>
-           <CarouselItem className="flex justify-center items-center">
-                      <Image src='/food_2.jpg' height={500} width={500} alt="food1"/>
-          </CarouselItem>
-          <CarouselItem className="flex justify-center items-center">
-                      <Image src='/food.jpg' height={500} width={500} alt="food1"/>
-          </CarouselItem>
-          <CarouselItem className="flex justify-center items-center">
-                      <Image src='/food_3.jpg' height={500} width={500} alt="food1"/>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-          <Text3DCard/>
-        {/* <h1 className="w-1/2 justify-center items-center flex text-gray-600">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. </h1> */}
+          <CarouselContent>
+            <CarouselItem className="flex justify-center items-center">
+              <Image src="/food_2.jpg" height={450} width={450} alt="food1" />
+            </CarouselItem>
+            <CarouselItem className="flex justify-center items-center">
+              <Image src="/food.jpg" height={500} width={500} alt="food1" />
+            </CarouselItem>
+            <CarouselItem className="flex justify-center items-center">
+              <Image src="/food_3.jpg" height={450} width={450} alt="food1" />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+
+        {/* Text3DCard */}
+        <div className="md:ml-8">
+          <Text3DCard />
+        </div>
       </div>
+   
 
       {/* why us */}
-      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Why Us?</h1>
-      <div className="flex justify-center items-center">
-        <Card className="bg-gray-200 w-3/4 p-16">
-        <CardContent className="flex items-center">
-            <Image src={'/delivery.jpg'} height={150} width={150} alt="delivery" />
-            <div>
-              <h1 className="font-bold text-gray-700">Fastest Delivery</h1>
-              <p className="">It is a long established fact that a reader will be distracted by the readable </p>
+     
+      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 "> Why Us?</h1>
+      <div className="flex justify-center items-center mt-8">
+        <Card className="bg-gray-200 w-full md:w-4/5 lg:w-3/4 p-4 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card Content 1 */}
+            <div className="flex items-center">
+              <Image src="/delivery.jpg" height={150} width={150} alt="delivery" className="rounded-lg" />
+              <div className="ml-4">
+                <h2 className="font-bold text-gray-700 text-lg md:text-xl">Fastest Delivery</h2>
+                <p className="text-sm md:text-base text-gray-600">It is a long established fact that a reader will be distracted by the readable content.</p>
+              </div>
             </div>
-            <Image src={'/delivery.jpg'} height={150} width={150} alt="delivery" />
-            <div>
-              <h1 className="font-bold text-gray-700">Fastest Delivery</h1>
-              <p className="">It is a long established fact that a reader will be distracted by the readable </p>
-            </div>       
-            <Image src={'/delivery.jpg'} height={150} width={150} alt="delivery" />
-            <div>
-              <h1 className="font-bold text-gray-700">Fastest Delivery</h1>
-              <p className="">It is a long established fact that a reader will be distracted by the readable </p>
+
+            {/* Card Content 2 */}
+            <div className="flex items-center">
+              <Image src="/delivery.jpg" height={150} width={150} alt="ingredients" className="rounded-lg" />
+              <div className="ml-4">
+                <h2 className="font-bold text-gray-700 text-lg md:text-xl">Quality Ingredients</h2>
+                <p className="text-sm md:text-base text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
             </div>
-        </CardContent>
-      </Card>
-    </div>
+
+            {/* Card Content 3 */}
+            <div className="flex items-center">
+              <Image src="/delivery.jpg" height={150} width={150} alt="service" className="rounded-lg" />
+              <div className="ml-4">
+                <h2 className="font-bold text-gray-700 text-lg md:text-xl">Excellent Service</h2>
+                <p className="text-sm md:text-base text-gray-600">Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
 
       {/* Popular dishes */}
       <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Popular Dishes</h1>
-          <div className="flex justify-evenly">
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/burger.jpg'} height={150} width={150} alt="food" />
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/shawarma.jpg'} height={150} width={150} alt="food"className="m-5" />
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>  
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/pizza.jpg'} height={150} width={150} alt="food" className="m-5"/>
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>
-          </div>
+    
 
-          <div className="flex justify-evenly mt-20">
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/burger.jpg'} height={150} width={150} alt="food" />
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/burger.jpg'} height={150} width={150} alt="food" />
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>  
-          <Card className="w-1/5">
-            <CardContent className="flex flex-col justify-center items-center">
-              <Image src={'/burger.jpg'} height={150} width={150} alt="food" />
-              <p className="font-semibold text-gray-700 text-center">Tasty Burger with beef and cheese dipped with white sause</p>
-            </CardContent>
-          </Card>
-          </div>
-      {/* Contact Us */}
-      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Contact Us</h1>
-      
-      <div className="justify-center items-center flex mb-20 w-full">
-      
-      {/* <AuroraBackground> */}
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="relative flex  gap-4 items-center justify-center px-4"
-        >
-        <ContactForm/>
-        <div className="text-4xl  font-bold text-gray-700 w-96 dark:text-white text-center">
-          Contact Us to clear your doubts!
-        </div>
-      </motion.div>
-    {/* </AuroraBackground> */}
+      {/* Cards Container - Flex with Wrap */}
+      <div className="flex flex-wrap justify-evenly items-center mt-8">
+        {/* Card 1 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/burger.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Tasty Burger with Beef</h1>
+            <p className="text-sm md:text-base text-center">Tasty burger with beef and cheese dipped in white sauce.</p>
+          </CardContent>
+        </Card>
+
+        {/* Card 2 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/pizza.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Cheese Pizza</h1>
+            <p className="text-sm md:text-base text-center">Delicious pizza topped with cheese and fresh ingredients.</p>
+          </CardContent>
+        </Card>
+
+        {/* Card 3 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/burger.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Classic Cheeseburger</h1>
+            <p className="text-sm md:text-base text-center">Traditional cheeseburger with beef and melted cheese.</p>
+          </CardContent>
+        </Card>
       </div>
+      <div className="flex flex-wrap justify-evenly items-center mt-8">
+        {/* Card 1 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/burger.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Tasty Burger with Beef</h1>
+            <p className="text-sm md:text-base text-center">Tasty burger with beef and cheese dipped in white sauce.</p>
+          </CardContent>
+        </Card>
 
+        {/* Card 2 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/pizza.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Cheese Pizza</h1>
+            <p className="text-sm md:text-base text-center">Delicious pizza topped with cheese and fresh ingredients.</p>
+          </CardContent>
+        </Card>
 
+        {/* Card 3 */}
+        <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <CardContent className="flex flex-col justify-center items-center">
+            <Image src="/burger.jpg" height={150} width={150} alt="food" className="m-2" />
+            <h1 className="font-semibold text-lg md:text-xl text-gray-800 text-center my-2">Classic Cheeseburger</h1>
+            <p className="text-sm md:text-base text-center">Traditional cheeseburger with beef and melted cheese.</p>
+          </CardContent>
+        </Card>
+      </div>
+      {/* Contact Us Section */}
+      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Contact Us</h1>
 
+      {/* Contact Form Section */}
+      <div className="flex flex-col md:flex-row justify-center items-center mt-8">
+        {/* Contact Form (column layout on mobile) */}
+        <div className="mb-4 md:mb-0"> {/* Margin bottom only on mobile */}
+          <ContactForm />
+        </div>
+
+        {/* Text (row layout on larger screens) */}
+        <div className="text-center md:text-left"> {/* Centered text on mobile, left-aligned on larger screens */}
+          <div className="text-4xl font-bold text-gray-700 dark:text-white m-10 w-96">Contact us to clear your doubts!</div>
+        </div>
+      </div>
 
 
     </div>
   );
 }
-
 

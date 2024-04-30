@@ -15,20 +15,24 @@ export function TypewriterEffectSmoothDemo() {
   const words = [
     {
       text: "Build",
-      className:"text-7xl text-gray-700 font-bold ",
+      className:"text-5xl md:text-7xl  text-gray-700 font-bold ",
     },
     {
       text: "awesome",
-      className:"text-7xl text-gray-700 font-bold ",
+      className:"text-5xl md:text-7xl text-gray-700 font-bold ",
     },
   ];
   return (
-    <div className="w-2/4 ">
-
+    <div className="lg:w-2/4  ">
         <TypewriterEffectSmooth words={words} cursorClassName="bg-black-200" />
-        <p className="w-2/3 text-gray-500 font-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        {/* <p className="w-2/3 text-gray-500 font-medium text-base md:text-lg lg:text-xl">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+      </p> */}
+        <p className=" lg:w-2/3 md:1/3 text-gray-500 font-medium ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <div>
         <Button className="mt-5">Reserver Table</Button>
         <Button className="mt-5 ml-5 bg-gray-200  text-black">Food Menu</Button>
+        </div>
         <h1 className="mt-10 mb-5 w-2/3 text-gray-500 font-bold">Trusted By</h1>
         <Carousel
         className="w-4/5"
