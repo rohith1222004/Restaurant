@@ -10,8 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { useRouter } from "next/navigation";
+
 
 export function TypewriterEffectSmoothDemo() {
+  const router = useRouter();
+
   const words = [
     {
       text: "Build",
@@ -30,7 +34,7 @@ export function TypewriterEffectSmoothDemo() {
       </p> */}
         <p className=" lg:w-2/3 md:1/3 text-gray-500 font-medium ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
         <div>
-        <Button className="mt-5">Reserver Table</Button>
+        <Button className="mt-5" onClick={()=>router.push("/reserveTable")}>Reserver Table</Button>
         <Button className="mt-5 ml-5 bg-gray-200  text-black">Food Menu</Button>
         </div>
         <h1 className="mt-10 mb-5 w-2/3 text-gray-500 font-bold">Trusted By</h1>

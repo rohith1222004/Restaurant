@@ -52,9 +52,9 @@ export default function Home() {
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuTrigger>Contact Us</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            {/* <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
-            </NavigationMenuLink>
+            </NavigationMenuLink> */}
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
@@ -211,7 +211,7 @@ export default function Home() {
 
         {/* Text (row layout on larger screens) */}
         <div className="text-center md:text-left"> {/* Centered text on mobile, left-aligned on larger screens */}
-          <div className="text-4xl font-bold text-gray-700 dark:text-white m-10 w-96">Contact us to clear your doubts!</div>
+          <div className="text-4xl font-bold text-gray-500 dark:text-white m-10 w-96">Contact us to clear your doubts!</div>
         </div>
       </div>
 
