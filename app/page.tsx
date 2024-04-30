@@ -1,7 +1,6 @@
 'use client'
 
 import { ModeToggle } from "@/components/toggle";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
   NavigationMenu,
@@ -23,6 +22,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay"
 import { Text3DCard } from "@/components/Text3DCard";
 import { ContactForm } from "@/components/ContactForm";
@@ -35,26 +37,26 @@ export default function Home() {
   return (
   <div className="h-full w-full  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.05] relative items-center justify-around">
       
- <div className="flex items-center justify-between px-4 py-2  ">
+ <div className="flex items-center justify-between px-4 py-2 ">
   {/* Left side: Logo and Restaurant Name */}
-  <div className="flex items-center space-x-2">
-    <Image src="/logo.gif" width={50} height={50} alt="logo" />
+  <div className="flex items-center space-x-2 ml-5">
+    <Link href="/"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
     {/* <h1 className="text-xl font-semibold te xt-gray-600">Restaurant Name</h1> */}
   </div>
 
   {/* Right side: Navigation Menu */}
-  <div className="flex items-center space-x-4">
+  <div className="flex items-center space-x-4 mt-5 mr-5">
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
-          <NavigationMenuTrigger>Book</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
           <NavigationMenuTrigger>Contact Us</NavigationMenuTrigger>
           <NavigationMenuContent>
-            {/* <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
-            </NavigationMenuLink> */}
+            </NavigationMenuLink>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
@@ -72,41 +74,42 @@ export default function Home() {
             <ThreeDCardDemo />
           </div>
         </div>
-        <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Featured Items</h1>
-      
-      <div className="flex justify-center items-center flex-col md:flex-row md:justify-evenly md:mb-8">
-        {/* Carousel */}
-        <Carousel
-          className="w-full md:w-2/5 lg:w-1/3" // Adjust width based on screen size
-          plugins={[Autoplay({ delay: 2000 })]}
-        >
-          <CarouselContent>
-            <CarouselItem className="flex justify-center items-center">
-              <Image src="/food_2.jpg" height={450} width={450} alt="food1" />
-            </CarouselItem>
-            <CarouselItem className="flex justify-center items-center">
-              <Image src="/food.jpg" height={500} width={500} alt="food1" />
-            </CarouselItem>
-            <CarouselItem className="flex justify-center items-center">
-              <Image src="/food_3.jpg" height={450} width={450} alt="food1" />
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
 
-        {/* Text3DCard */}
-        <div className="md:ml-8">
-          <Text3DCard />
+        <h1 className="flex justify-center m-10 text-4xl font-bold text-gray-600 " style={{color:"#FF6500"}}>We serve the real food!</h1>
+      
+        <div className="flex justify-center items-center flex-col md:flex-row md:justify-evenly md:mb-8">
+          {/* Carousel */}
+          <Carousel
+            className="w-full md:w-2/5 lg:w-1/3" // Adjust width based on screen size
+            plugins={[Autoplay({ delay: 1500 })]}
+          >
+            <CarouselContent>
+              <CarouselItem className="flex justify-center items-center">
+                <Image src="/food_2.jpg" height={400} width={400} alt="food1" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center items-center">
+                <Image src="/food.jpg" height={450} width={450} alt="food1" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center items-center">
+                <Image src="/food_3.jpg" height={400} width={400} alt="food1" />
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+
+          {/* Text3DCard */}
+          <div className="md:ml-8">
+            <Text3DCard />
+          </div>
         </div>
-      </div>
    
 
       {/* why us */}
      
-      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 "> Why Us?</h1>
+      <h1 className="flex justify-center m-10 text-4xl font-bold text-gray-600 "style={{color:"#FF6500", marginTop:150}}> Why Us?</h1>
       <div className="flex justify-center items-center mt-8">
-        <Card className="bg-gray-200 w-full md:w-4/5 lg:w-3/4 p-4 md:p-8">
+        <Card className="bg-gray-200 w-full md:w-4/5 lg:w-7/8 p-4 md:p-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card Content 1 */}
             <div className="flex items-center">
@@ -139,7 +142,7 @@ export default function Home() {
       </div>
 
       {/* Popular dishes */}
-      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Popular Dishes</h1>
+      <h1 className="flex justify-center m-10 text-4xl font-bold text-gray-600 "style={{color:"#FF6500", marginTop:150}}>Popular Dishes</h1>
     
 
       {/* Cards Container - Flex with Wrap */}
@@ -200,7 +203,7 @@ export default function Home() {
         </Card>
       </div>
       {/* Contact Us Section */}
-      <h1 className="flex justify-center m-10 text-3xl font-semibold text-gray-600 ">Contact Us</h1>
+      <h1 className="flex justify-center m-10 mb-16 text-4xl font-bold text-gray-600 "style={{color:"#FF6500", marginTop:150}}>Contact Us</h1>
 
       {/* Contact Form Section */}
       <div className="flex flex-col md:flex-row justify-center items-center mt-8">
@@ -211,12 +214,127 @@ export default function Home() {
 
         {/* Text (row layout on larger screens) */}
         <div className="text-center md:text-left"> {/* Centered text on mobile, left-aligned on larger screens */}
-          <div className="text-4xl font-bold text-gray-500 dark:text-white m-10 w-96">Contact us to clear your doubts!</div>
+          <div className="text-3xl font-bold text-gray-700 dark:text-white ml-16 w-96">We are here to serve you!</div>
+          <div className=" text-base font-normal text-gray-700 dark:text-white ml-16 mt-4 w-96">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, quisquam mollitia? Quos obcaecati a temporibus accusamus beatae sint voluptates ratione.</div>
         </div>
       </div>
 
-
+    {/* Footer */}
+    <section className="mt-20 w-full py-12  bg-zinc-900 dark:bg-zinc-100">
+      <div className="container px-4 md:px-6 flex flex-col items-center text-center">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white" >
+          Stay Connected
+        </h2>
+        <p className="mx-auto max-w-[700px] text-zinc-100 md:text-lg dark:text-zinc-800 mt-3">
+          Subscribe to our newsletter and follow us on our social media.
+        </p>
+        <div className="w-full max-w-md space-y-2 ">
+          <form className="flex space-x-2  items-center justify-center mt-5 mb-5">
+            <Input className="max-w-lg flex-1 text-zinc-900 bg-white" placeholder="Enter your email" type="email" />
+            <Button className="text-white border-white" type="submit" variant="outline" style={{backgroundColor:"#FF6500"}}>
+              Subscribe
+            </Button>
+          </form>
+        </div>
+        <div className="flex justify-center space-x-4">
+          <Link aria-label="Facebook page" className="text-white" href="#">
+            <FacebookIcon className="h-6 w-6" />
+          </Link>
+          <Link aria-label="Twitter profile" className="text-white" href="#">
+            <TwitterIcon className="h-6 w-6" />
+          </Link>
+          <Link aria-label="Instagram profile" className="text-white" href="#">
+            <InstagramIcon className="h-6 w-6" />
+          </Link>
+          <Link aria-label="LinkedIn profile" className="text-white" href="#">
+            <LinkedinIcon className="h-6 w-6" />
+          </Link>
+        </div>
+      </div>
+    </section>
     </div>
   );
 }
 
+function FacebookIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
+
+
+function InstagramIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
+
+
+function LinkedinIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  )
+}
+
+
+function TwitterIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+    </svg>
+  )
+}
