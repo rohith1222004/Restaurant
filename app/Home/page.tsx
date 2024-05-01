@@ -106,7 +106,7 @@ export default function Home() {
   {/* Left side: Logo and Restaurant Name */}
   <div className="flex items-center space-x-2 ml-5">
     <Link href="/Home"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
-    {/* <h1 className="text-xl font-semibold te xt-gray-600">Restaurant Name</h1> */}
+    <h1 className="text-xl font-semibold text-gray-500">Le Meridien</h1>
   </div>
 
   {/* Right side: Navigation Menu */}
@@ -322,7 +322,7 @@ export default function Home() {
   );
 }
 
-function FacebookIcon(props) {
+function FacebookIcon(props : any) {
   return (
     <svg
       {...props}
@@ -342,7 +342,7 @@ function FacebookIcon(props) {
 }
 
 
-function InstagramIcon(props) {
+function InstagramIcon(props : any) {
   return (
     <svg
       {...props}
@@ -364,7 +364,7 @@ function InstagramIcon(props) {
 }
 
 
-function LinkedinIcon(props) {
+function LinkedinIcon(props : any) {
   return (
     <svg
       {...props}
@@ -386,7 +386,7 @@ function LinkedinIcon(props) {
 }
 
 
-function TwitterIcon(props) {
+function TwitterIcon(props : any) {
   return (
     <svg
       {...props}
