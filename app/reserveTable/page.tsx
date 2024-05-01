@@ -185,7 +185,7 @@ return(
     </Popover>
         <div>
         <div style={{marginTop:10}}><Label className="">Select Time</Label></div>
-        <input className=""  type="time" id="appt" name="appt"/>
+        <input style={{marginTop:10}} className=""  type="time" id="appt" name="appt"/>
         </div>
                </div>
             </AlertDialogDescription>
