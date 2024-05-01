@@ -31,11 +31,22 @@ import { useEffect, useState } from "react"
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-  
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Calendar as CalendarIcon } from "lucide-react"
+import * as React from "react"
+import { format } from "date-fns"
+import { cn } from "@/lib/utils"
+import Time from "@/components/Time"
 
 function reserveTable() {
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
+    const [date, setDate] = React.useState<Date>()
 
     useEffect(() => {
       setIsOpen(false); // Reset state on component mount
@@ -147,6 +158,36 @@ return(
 
                <div style={{marginTop:10}}><Label className="">Preferred Table</Label></div>
                <Input/>
+        <div style={{marginTop:10}}><Label className="">Select Date</Label></div>
+               <div className="mt-2">
+
+               <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "w-[280px] justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+        <div>
+        <div style={{marginTop:10}}><Label className="">Select Time</Label></div>
+        <input className=""  type="time" id="appt" name="appt"/>
+        </div>
+               </div>
             </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
