@@ -58,6 +58,7 @@ export function ContactForm() {
       </form>
     </div>
     </BackgroundGradient>
+
   );
 }
 

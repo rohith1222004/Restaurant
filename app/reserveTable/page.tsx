@@ -68,7 +68,7 @@ return(
     <div className="flex items-center justify-between px-4 py-2 mb-6 ">
   {/* Left side: Logo and Restaurant Name */}
         <div className="flex items-center space-x-2  ml-5">
-            <Link href="/"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
+            <Link href="/Home"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
             {/* <h1 className="text-xl font-semibold te xt-gray-600">Restaurant Name</h1> */}
         </div>
 
@@ -90,7 +90,7 @@ return(
     </div>
     <div className="flex justify-around">
     <Table/>
-    <Card className="w-1/4  bg-slate-200 pt-5" style={{height:"83vh"}}>
+    <Card className="w-1/4 bg-slate-200 pt-5 flex items-center justify-center flex-col" style={{height:"83vh"}}>
         <CardContent className="flex m-2 mt-5">
             <div className="w-14 h-5 bg-orange-500 rounded-full mr-5"></div>
             <h1 className="font-semibold text-gray-600">Available Seats</h1>
