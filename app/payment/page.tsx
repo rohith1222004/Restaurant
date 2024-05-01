@@ -19,7 +19,7 @@ function payment() {
         <div className="flex items-center justify-between px-4 py-2  ">
       {/* Left side: Logo and Restaurant Name */}
       <div className="flex items-center space-x-2 ml-5">
-        <Link href="/"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
+        <Link href="/Home"><Image src="/logo.gif" width={50} height={50} alt="logo" /></Link>
         {/* <h1 className="text-xl font-semibold te xt-gray-600">Restaurant Name</h1> */}
       </div>
     
