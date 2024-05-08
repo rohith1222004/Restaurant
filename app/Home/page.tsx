@@ -119,11 +119,14 @@ export default function Home() {
           <NavigationMenuTrigger>Menu</NavigationMenuTrigger>
           <NavigationMenuTrigger>Contact Us</NavigationMenuTrigger>
           <Link href="/"><NavigationMenuTrigger>Logout</NavigationMenuTrigger></Link>
-          <NavigationMenuContent>
+          {/* <NavigationMenuContent>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Documentation
             </NavigationMenuLink>
-          </NavigationMenuContent>
+          </NavigationMenuContent> */}
+        </NavigationMenuItem>'
+        <NavigationMenuItem>
+            <ModeToggle/>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
